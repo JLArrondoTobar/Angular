@@ -8,7 +8,7 @@ $colors: (
     primary-dark: darken(rgb(3, 155, 229), 40%),
     deep-blue: #0b4c7e,
     red-error: #e53735,
-    accent: white
+    white: white
 );
 
 /********************************************************/
@@ -115,7 +115,8 @@ main {
 
         ul {
             list-style-type: none;
-            margin: 0; padding: 0;
+            margin: 0; 
+            padding: 0;
 
             li {
                 margin-bottom: 10px;
@@ -151,7 +152,7 @@ main {
 
         h1 {
             font-size: 3em;
-            margin-top: 10px;
+            margin: 10px 0px;
             text-transform: uppercase;
 
             @include desktop {
@@ -166,20 +167,14 @@ main {
         }
 
         a {
-            color: color(primary-dark);
-            border-radius: $borders;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-weight: bold;
-            background-color: color(accent);
-            display: block;
-            text-align: center;
-            margin: 50px auto 0 auto;
-            padding: $padding;
+            background-color: color(white);
+            margin: 0 8px 0 auto;
+            padding: 8px 16px 8px 16px;
+
 
             @include desktop {
                 display: inline-block;
-                padding: $padding $padding * 4;
+                padding: 6px 16px;
             }
         }
     }
@@ -333,28 +328,86 @@ main {
 
 #facebookImage{
     background: no-repeat center center;
-    background-size: 20px;
+    background-size: 15px;
     background-image: url('img/facebook.png');
+}
+
+#facebookImage:hover{
+    background-color: #3b5998 !important;
+    background: no-repeat center center;
+    background-size: 20px;
+    background-image: url('img/whiteFacebookF.png');
 }
 
 #twitterImage{
     background: no-repeat center center;
-    background-size: 40px;
+    background-size: 35px;
     background-image: url('img/twitter.png');
 }
 
-.social-btns .btn,
-.social-btns .btn:before {
-  transition: all 0.35s;
-  transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
-}
-.social-btns .btn:before {
-  top: 90%;
-  left: -110%;
+#twitterImage:hover{
+    background-color: #2aa8de !important;
+    background: no-repeat center center;
+    background-size: 42.5px;
+    background-image: url('img/whiteTwitter.png');
 }
 
-.social-btns .btn.facebook:before {
-  background-color: #3b5998;
+#googleImage{
+    background: no-repeat center center;
+    background-size: 20px;
+    background-image: url('img/googleG.png');
+}
+
+#googleImage:hover{
+    background-color: #e65757 !important;
+    background: no-repeat center center;
+    background-size: 26px;
+    background-image: url('img/whiteGoogleG.png');
+}
+
+#dribbleImage{
+    background: no-repeat center center;
+    background-size: 35px;
+    background-image: url('img/dribbleIcon.png');
+}
+#dribbleImage:hover{
+    background-color: #f06797 !important;
+    background: no-repeat center center;
+    background-size: 42.5px;
+    background-image: url('img/whiteDribble.png');
+}
+
+#skypeImage{
+    background: no-repeat center center;
+    background-size: 35px;
+    background-image: url('img/skypeIcon.png');
+}
+
+#skypeImage:hover{
+    background-color: #00b0f0 !important;
+    background: no-repeat center center;
+    background-size: 42.5px;
+    background-image: url('img/whiteSkype.png');
+}
+.social-btns .btn {
+    display: inline-block;
+    background-color: #fff;
+    width: 20px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 10px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 28%;
+    box-shadow: 0 5px 15px -5px rgba(0,0,0,0.1);
+    opacity: 0.99;
+  }
+
+.social-btns .btn,
+.social-btns .btn:before {
+  transition: all 1s;
+  //transition-timing-function: cubic-bezier(0.31, -0.105, 0.43, 1.59);
 }
 .social-btns .btn.twitter:before {
   background-color: #3cf;
@@ -370,43 +423,3 @@ main {
 .social-btns .btn.skype:before {
   background-color: #00aff0;
 }
-
-.social-btns .btn:focus:before,
-.social-btns .btn:hover:before {
-  top: -10%;
-  left: -10%;
-}
-.social-btns {
-  height: 90px;
-  margin: auto;
-  font-size: 0;
-  text-align: center;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-.social-btns .btn {
-  display: inline-block;
-  background-color: #fff;
-  width: 20px;
-  height: 40px;
-  line-height: 40px;
-  margin: 0 10px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  border-radius: 28%;
-  box-shadow: 0 5px 15px -5px rgba(0,0,0,0.1);
-  opacity: 0.99;
-}
-.social-btns .btn:before {
-  content: '';
-  width: 120%;
-  height: 120%;
-  position: absolute;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-

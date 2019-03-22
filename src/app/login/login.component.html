@@ -1,32 +1,57 @@
-<div>
-  <h1>Login</h1>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
 
-<form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+    <div id="bg"></div>
 
-    <h5 *ngIf="success">Your form is valid!</h5>
+    <header>
+        <a href="#">logo</a>
+    </header>
 
-    <div>
-      <label>
-        Username:
-        <input type="text" formControlName="username">
-        <div *ngIf="submitted && messageForm.controls.username.errors" class="error">
-          <div *ngIf="messageForm.controls.username.errors.required">Your name is required</div>
-        </div>
-      </label>
-    </div>
-  
-    <div>
-      <label>
-        Password:
-        <input type="text" formControlName="password">
-        <div *ngIf="submitted && messageForm.controls.password.errors" class="error">
-          <div *ngIf="messageForm.controls.password.errors.required">A message is required</div>
-        </div>
-      </label>
-    </div>
+    <main>
 
-    <input type="submit" value="Login" class="cta">
-    <a routerLink="/home">Login as a Guest</a>
-  
-  </form>
+        <section id="loginSection">
+            <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
+              <h5 *ngIf="success">Your form is valid!</h5>
+              <div>
+                  <label>
+                    Username:
+                    <input type="text" formControlName="username"> 
+                    <div *ngIf="submitted && messageForm.controls.username.errors" class="error">
+                      <div *ngIf="messageForm.controls.username.errors.required">Your name is required</div>
+                    </div>
+                  </label>
+                </div>
+              
+                <div>
+                  <label>
+                    Password:
+                    <input type="text" formControlName="password">
+                    <div *ngIf="submitted && messageForm.controls.password.errors" class="error">
+                      <div *ngIf="messageForm.controls.password.errors.required">A message is required</div>
+                    </div>
+                  </label>
+                </div>
+            
+                <input type="submit" value="Login" class="cta">
+                <a routerLink="/home">Continue as Guest</a>
+            </form>
+        </section>
+
+
+        <section id="primary">
+            <h1>Your Personal Assistant</h1>
+            <p>Get help with your daily life stuff.</p>
+
+            <a href="#">Get help already</a>
+        </section>
+    </main>
+
+</body>
+</html>

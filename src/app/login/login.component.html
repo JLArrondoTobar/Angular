@@ -1,57 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-
-    <div id="bg"></div>
-
-    <header>
-        <a href="#">logo</a>
-    </header>
-
-    <main>
-
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Document</title>
+  </head>
+  <body>
+      <div id="bg"></div>
+      <header>
+        <a id="logoImage" href="#"></a>
+      </header>
+      
+      <main>
         <section id="loginSection">
-            <form [formGroup]="messageForm" (ngSubmit)="onSubmit()">
-              <h5 *ngIf="success">Your form is valid!</h5>
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
               <div>
-                  <label>
-                    Username:
-                    <input type="text" formControlName="username"> 
-                    <div *ngIf="submitted && messageForm.controls.username.errors" class="error">
-                      <div *ngIf="messageForm.controls.username.errors.required">Your name is required</div>
-                    </div>
-                  </label>
+                <input class="loginInput" type="text" placeholder="Username" formControlName="username"> 
+                <div *ngIf="submitted && loginForm.controls.username.errors" class="error">
+                  <div id="usernameFailed" class="inputFailedMessage" *ngIf="loginForm.controls.username.errors.required">Username is required</div>
                 </div>
+              </div>
               
-                <div>
-                  <label>
-                    Password:
-                    <input type="text" formControlName="password">
-                    <div *ngIf="submitted && messageForm.controls.password.errors" class="error">
-                      <div *ngIf="messageForm.controls.password.errors.required">A message is required</div>
-                    </div>
-                  </label>
+              <div>
+                <input class="loginInput" type="password" placeholder="Password" formControlName="password">
+                <div *ngIf="submitted && loginForm.controls.password.errors" class="error">
+                  <div id="passwordFailed" class="inputFailedMessage" *ngIf="loginForm.controls.password.errors.required">Password is required</div>
                 </div>
-            
-                <input type="submit" value="Login" class="cta">
-                <a routerLink="/home">Continue as Guest</a>
+              </div>
+              <div class="loginButtonDIV">
+                <button class="loginButton">
+                    <span>Login</span>
+                </button>
+              </div>
+              <a routerLink="/home" id="continueAsGuest">Continue as Guest</a>
             </form>
         </section>
-
-
         <section id="primary">
             <h1>Your Personal Assistant</h1>
             <p>Get help with your daily life stuff.</p>
-
+            <div class="social-btns">
+              <a class="btn facebook" id="facebookImage" ></a>
+              <a class="btn twitter" id="twitterImage"></a>
+              <a class="btn google" ><i class="fa fa-google"></i></a>
+              <a class="btn dribbble" ><i class="fa fa-dribbble"></i></a>
+              <a class="btn skype" ><i class="fa fa-skype"></i></a>
+            </div>
             <a href="#">Get help already</a>
         </section>
-    </main>
-
-</body>
+      </main>
+  </body>
 </html>

@@ -8,14 +8,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  messageForm: FormGroup;
+  loginForm: FormGroup;
   submitted: boolean = false;
   success: boolean = false;
 
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.messageForm = this.formBuilder.group({
+    this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required  ]
     });
@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
 
-    if (this.messageForm.invalid) {
+    if (this.loginForm.invalid) {
         return;
     }
 
